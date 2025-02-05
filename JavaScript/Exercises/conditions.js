@@ -16,7 +16,7 @@ if(!isLoggedIn){
 
 
 console.log(isLoggedIn) //false
-console.log(!isLoggedIn) //true       -> 'i' -> actually it inverse 
+console.log(!isLoggedIn) //true       -> '!' -> actually it inverse 
 
 
 //Note:
