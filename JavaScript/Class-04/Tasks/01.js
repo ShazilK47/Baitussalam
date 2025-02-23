@@ -27,6 +27,14 @@ console.log(truncateString("Lorem ipsum dolor sit amet", 10));
 console.log(truncateString("Hello, world!", 8));
 console.log(truncateString("JavaScript", 15));
 
-let str = prompt("Enter the string to truncate: ");
-let length = parseInt(prompt("Enter the length: "));
-alert(`${truncateString(str, length)}`);
+// let str = prompt("Enter the string to truncate: ");
+// let length = parseInt(prompt("Enter the length: "));
+// alert(`${truncateString(str, length)}`);
+
+let btn = document.getElementById("ex-1");
+
+btn.addEventListener("click", () => {
+  let str = prompt("Enter the string to truncate: ");
+  let length = parseInt(prompt("Enter the length: "));
+  alert(`${truncateString(str, length)}`);
+});

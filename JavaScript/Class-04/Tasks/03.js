@@ -1,6 +1,6 @@
 // Count Vowels in a String
 
-let str = prompt("Enter String to Count Vowels ");
+// let str = prompt("Enter String to Count Vowels ");
 function countVowels(str) {
   let count = 0;
 
@@ -23,4 +23,11 @@ console.log(countVowels("hello"));
 console.log(countVowels("HELLO"));
 console.log(countVowels("Javascript"));
 console.log(countVowels(""));
-alert(`Number of Vowels in the given string: ${countVowels(str)}`);
+// alert(`Number of Vowels in the given string: ${countVowels(str)}`);
+
+let btn3 = document.getElementById("ex-3");
+
+btn3.addEventListener("click", () => {
+  let str = prompt("Enter String to Count Vowels ");
+  alert(`Number of Vowels in the given string: ${countVowels(str)}`);
+});
