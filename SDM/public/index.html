@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDM</title>
+</head>
+<body>
+    <h1>Student Database management</h1>
+
+    <form action="/" id="form">
+        <input type="text" name="name" id="name" placeholder="Student Name">
+        <input type="text" name="major" id="major" placeholder="Student Major">
+        <button type="submit">Submit</button>
+    </form>
+
+    <table id="student-table">
+        <thead>
+            <th>Name</th>
+            <th>Major</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>Computer Science</td>
+                <td><button id="deleteBtn">Delete</button> <button id="editBtn">Edit</button></td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+<script src="src/index.ts"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student CRUD Application (TypeScript)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Student CRUD Application</h1>
+
+    <!-- Student Form -->
+    <form id="create-student">
+        <input type="text" id="name" name="name" placeholder="Enter student name" required>
+        <input type="text" id="city" name="city" placeholder="Enter student city" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Students Table -->
+    <h2>Students List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Weather Info</th>
+            </tr>
+        </thead>
+        <tbody id="students">
+            <!-- Students will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script src="../dist/bundle.js"></script>
+</body>
+</html>
