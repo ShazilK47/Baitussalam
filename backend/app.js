@@ -1,15 +1,19 @@
-const http = require('http');
+
 
 const {MiniExpress} = require('./mini-express.js')
 
 const app = new MiniExpress();
-app.handler((req, res) => {
-    console.log(req.url)
+
+// to resigste end points , to set config
+// app.handle('/home',(req, res) => {
+//     console.log(req.url)
+// },'GET')
+
+
+app.get('/', (req, res) => {
+    console.log('>>>', req.url)
+    res.end('Users data')
+
 })
-
-
-// app.get('/users', (req, res) => {
-
-// })
 
 app.start(3000, () => console.log('Server started ...'))

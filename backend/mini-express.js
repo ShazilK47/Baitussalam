@@ -1,38 +1,43 @@
+
 const http = require('http')
 
-class MiniExpress {
+class MiniExpress{
     constructor(){
-        console.log('MiniExpress initialize')
-    }
-
-    handler(cb){
-        cb()
-
-    }
-
-    requestHandler(req, res){
-
-    } 
-
-    get(path, cb){
+        this.routes = {
+            GET: [],
+            POST: []
+        }
 
     }
 
-    post(path,cb){
-
-    
-    }
-
-    delete(path, cb){
+    requestHandler(req,res){
+        const {method, url} = req;
+        const route = this.routes[method]?.find( obj => obj.path === url)
+        console.log(route)
+        if(route){
+            route.handler(req, res)
+        }else{
+            res.end('not found')
+        }
         
+
     }
 
-    start(PORT, cb){
-        const server = http.createServer(this.requesthandler)
+    get(path, handler){
+        this.routes.GET.push({path, handler})
 
-        // listen cb
-        server.listen(PORT, cb)
     }
+
+    post(path, handler){
+        this.routes.POST.push({path, handler})
+
+    }
+
+    start(PORT, callBack){
+        const server = http.createServer((req, res)=> { this.requestHandler(req, res)})
+        server.listen(PORT, callBack)
+    }
+
 }
 
 module.exports = {
