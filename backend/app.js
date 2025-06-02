@@ -16,4 +16,11 @@ app.get('/', (req, res) => {
 
 })
 
+app.post('/login', (req, res) => {
+    console.log('>>>', req.url)
+    res.end('Users data')
+
+})
+
+
 app.start(3000, () => console.log('Server started ...'))
