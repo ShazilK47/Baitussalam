@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const { useSyncExternalStore } = require('react');
 const app = express();
 
 
@@ -85,4 +86,32 @@ app.listen(3000, () => {
 //         else next()
 // })
 
+
+/**
+ * login user,set session,response session id
+ */
+
+const sessions = {
+    'asdas123':123
+}
+
+app.get('/session',(req,res) => {
+    console.log('>>>',req)
+    res.send(sessions)
+})
+app.post('/login', (req,res) => {
+    //1- credentials validate
+    const user = users.find((user) => user.username === req.body.username && user.password === req.body.password)
+
+
+    //1b- incase of faliure, return error
+    if(!user) return res.status(401).send({message:'Invalid credentials'})
+    //2- create session id
+    const sessionId = Date.now()+Math.random;
+    //3- set user session
+    sessions[sessionId]= user;
+    
+    //4- response user with session id
+    res.send('Successfully loggedin,session id:' + sessionId)
+})
 
