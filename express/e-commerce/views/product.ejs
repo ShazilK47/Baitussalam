@@ -1,0 +1,16 @@
+<%- include('partials/header', {pageTitle: product.name}); %>
+
+<body>
+  <h1>Product Details</h1>
+
+  <% if (product) { %>
+    <h2><%= product.name %></h2>
+    <p>Price: $<%= product.price %></p>
+    <p>Description: <%= product.description || 'No description available.' %></p>
+  <% } else { %>
+    <p>Product not found</p>
+  <% } %>
+
+  <a href="/products">Back to Product List</a>
+</body>
+</html>
