@@ -1,9 +1,51 @@
 <%- include('partials/header', {pageTitle: 'MY Store'}); %>
-<body>
 
-    'Welcome to my Store'
-    <br>
-    
-    <a href="/products">Browse Products</a>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #007bff;
+      margin-top: 50px;
+    }
+
+    .welcome-text {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-link:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to MY Store</h1>
+  
+  <p class="welcome-text">Explore a wide variety of products that you'll love!</p>
+
+  <a class="cta-link" href="/products">Browse Products</a>
 </body>
 </html>

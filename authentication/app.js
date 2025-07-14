@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const bcrypt = require('bcryptjs')
 const session = require('express-session');
+const jwt = require('jsonwebtoken')
+const applicatoin_key = 'applicatoin-secret-key'
+
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -11,10 +14,12 @@ app.use(session({
     saveUninitialized: false
 }));
 
+
 app.set('view engine', 'ejs');
 
 const users = []
 
+const sessionId = jwt.sign({user_id: user.id}, application_key)
 app.get('/', (req, res)=>{
     res.render('home')
 })
@@ -60,7 +65,17 @@ function authMiddleware(req, res, next) {
     }
 }
 
+function isAdmin(req, res, next){
+    if(!checkRole(req, 'admin'))return res.redirect('/')
+    next()
+}
 
+function checkRole(req, rolename){
+    const user = users.find(user => user.id === req.session.user.id)
+    if(!user) return res.status(400).send({message: 'Bad request'})
+    
+        return user.role.includes(rolename)
+}
 
 app.listen(3000, ()=>{
     console.log('Server is started at Port 3000')

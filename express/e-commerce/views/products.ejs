@@ -1,4 +1,57 @@
 <%- include('partials/header', {pageTitle: 'Products'}); %>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    li {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 10px 0;
+      padding: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    li:hover {
+      background-color: #f1f1f1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    h2 {
+      margin: 0;
+      color: #333;
+      font-size: 1.5em;
+    }
+
+    p {
+      color: #555;
+      font-size: 1em;
+      margin-top: 8px;
+    }
+  </style>
+</head>
 <body>
   <h1>Product List</h1>
   <ul>
